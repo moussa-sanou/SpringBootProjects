@@ -10,15 +10,10 @@ public class SpringBootLearningApplication {
 	public static void main(String[] args) {
 		var ctx = SpringApplication.run(SpringBootLearningApplication.class, args);
 
-		FirstClass firstClass = ctx.getBean(FirstClass.class);
+		FirstClass firstClass = ctx.getBean("myBean",FirstClass.class);
 		String ans = firstClass.sayHello();
 		System.out.println(ans);
 	}
 
-	@Bean
-	public FirstClass firstClass()
-	{
-		return new FirstClass();
-	}
 
 }
